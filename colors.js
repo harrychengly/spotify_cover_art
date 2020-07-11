@@ -1,0 +1,1 @@
+// https://mastersofmedia.hum.uva.nl/blog/2011/04/26/visualising-music-the-problems-with-genre-classification/#:~:text=Rock%20is%20red%2C%20metal%20is,is%20brown%2C%20pop%20is%20green
