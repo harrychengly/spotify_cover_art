@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="200"
+      height="100"
+      style="border: 1px solid #d3d3d3;"
+    >
+      Your browser does not support the HTML canvas tag.</canvas
+    >
+  </body>
+  <script>
+    var genres = {
+      hiphop: "blue",
+      rock: "red",
+      pop: "green",
+    };
+
+    var samepleDict = {
+      hiphop: 10,
+      rock: 50,
+      pop: 5,
+    };
+
+    // every artist - one genre
+
+    function imageAlgo(samepleDict) {
+      var c = document.getElementById("myCanvas");
+      var ctx = c.getContext("2d");
+      var grd = ctx.createLinearGradient(0, 0, 170, 0);
+      //   grd.addColorStop(0, "red");
+      //   grd.addColorStop(1, "white");
+      var total = 0;
+
+      for (var genre in samepleDict) {
+        console.log(samepleDict[genre])
+        total += samepleDict[genre];
+      }
+
+      console.log(total);
+
+      for (var genre in samepleDict) {
+        if (genre in genres) {
+          grd.addColorStop(samepleDict[genre] / total, genres[genre]);
+        }
+      }
+
+      //   for (var genre in genreDict) {
+      //if genre in genres splash color on canvas
+      //else ignore
+      //   }
+
+      // Create gradient
+
+      // Fill with gradient
+      ctx.fillStyle = grd;
+      ctx.fillRect(20, 20, 150, 100);
+    }
+
+    imageAlgo(samepleDict);
+  </script>
+</html>
